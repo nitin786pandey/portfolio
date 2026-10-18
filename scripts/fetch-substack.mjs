@@ -157,7 +157,7 @@ async function main() {
   const posts = [];
   const skipped = [];
   for (const a of archive) {
-    if (hidden.has(a.slug)) { skipped.push(`${a.slug} (hidden)`); continue; }
+    if (hidden.has(a.slug)) { skipped.push("(hidden post)"); continue; }
     if (a.audience && a.audience !== "everyone") { skipped.push(`${a.slug} (paid)`); continue; }
     if ((a.wordcount ?? 0) < MIN_WORDS) { skipped.push(`${a.slug} (${a.wordcount} words)`); continue; }
     try {

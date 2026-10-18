@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
-import { formatDate, type Post } from "@/lib/posts";
+import { formatDate } from "@/lib/format";
+import type { Post } from "@/lib/posts";
 
 /** A note card: 16:9 cover, date · read time, title, one-line subtitle. Links to the on-site article. */
 export default function NoteCard({ post, i = 0, headingLevel = "h2" }: { post: Post; i?: number; headingLevel?: "h2" | "h3" }) {

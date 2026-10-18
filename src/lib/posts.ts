@@ -33,5 +33,4 @@ export const featured: Post[] = (
 
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug);
 
-export const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+export { formatDate } from "./format";

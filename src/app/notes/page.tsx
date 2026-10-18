@@ -38,7 +38,7 @@ export default function NotesPage() {
               , my Substack.
             </p>
           </header>
-          <NotesIndex posts={posts} />
+          <NotesIndex posts={posts.map((p) => ({ ...p, html: "", toc: [] }))} />
           <section className="cta rv" aria-labelledby="sub-title">
             <div>
               <h2 id="sub-title">New notes land on Substack first.</h2>
