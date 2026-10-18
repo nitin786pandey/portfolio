@@ -34,11 +34,13 @@ export const stats = [
   { v: "2", k: "live side projects" },
 ];
 
-/** PLACEHOLDERS: real notes go here. */
-export const notes = [0, 1, 2].map(() => ({
-  date: "[Date]",
-  read: "[x] min read",
-  title: "[Draft title]",
-  summary: "[One-line summary of the note.]",
-  href: "#",
-}));
+/**
+ * Writing, imported from Substack at build time (scripts/fetch-substack.mjs).
+ * - featured: slugs shown on the homepage (first 3 are used). Empty = newest 3.
+ * - hidden: slugs to leave off the site entirely.
+ * DRAFT: Nitin to confirm the featured set before publishing.
+ */
+export const writing = {
+  featured: ["ai-agents-memory-loss", "the-hike-and-the-fall", "does-gen-z-really-want-to-bereal"],
+  hidden: [] as string[],
+};

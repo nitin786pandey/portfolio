@@ -1,0 +1,327 @@
+{
+  "publication": {
+    "name": "The Product Sensei",
+    "url": "https://theproductsensei.substack.com",
+    "profile": "https://substack.com/@learningnitin"
+  },
+  "fetchedAt": "2026-10-18T19:04:40.330Z",
+  "skipped": [
+    "coming-soon (3 words)"
+  ],
+  "posts": [
+    {
+      "slug": "ai-agents-memory-loss",
+      "title": "AI Agents & The Invisible Cost of Forgetting",
+      "subtitle": "How AI Agents Are Quietly Collapsing Under Their Own Memory",
+      "description": "How AI Agents Are Quietly Collapsing Under Their Own Memory",
+      "date": "2025-11-09T03:50:40.830Z",
+      "url": "https://theproductsensei.substack.com/p/ai-agents-memory-loss",
+      "wordcount": 1190,
+      "readingMinutes": 5,
+      "cover": "/writing/ai-agents-memory-loss/cover.webp",
+      "coverRemote": "https://substack-post-media.s3.amazonaws.com/public/images/aa451fd5-ef93-4b48-8aca-26f6433ed371_1024x1536.png",
+      "toc": [
+        {
+          "id": "1-the-irreversible-compression-paradox",
+          "text": "1. The Irreversible Compression Paradox",
+          "level": 3
+        },
+        {
+          "id": "2-the-cache-as-a-measure-of-mind",
+          "text": "2. The Cache as a Measure of Mind",
+          "level": 3
+        },
+        {
+          "id": "3-the-cliff-of-diminishing-returns",
+          "text": "3. The Cliff of Diminishing Returns",
+          "level": 3
+        },
+        {
+          "id": "4-proactive-vs-reactive-memory",
+          "text": "4. Proactive vs. Reactive Memory",
+          "level": 3
+        },
+        {
+          "id": "5-the-completeness-coherence-trade-off",
+          "text": "5. The Completeness–Coherence Trade-off",
+          "level": 3
+        },
+        {
+          "id": "6-the-true-north-tokens-per-task",
+          "text": "6. The True North: Tokens per Task",
+          "level": 3
+        },
+        {
+          "id": "the-larger-reflection-designing-machines-that-remember-wisel",
+          "text": "The Larger Reflection: Designing Machines That Remember Wisely",
+          "level": 3
+        }
+      ],
+      "html": "<figure><img src=\"/writing/ai-agents-memory-loss/img-0.webp\" alt=\"\" width=\"1200\" height=\"1096\" loading=\"lazy\" /><figcaption>Source : A Sophisticated Prompt Driven Imagen generation model (chatGPT :))</figcaption></figure><p>Every intelligent system faces the same question a human mind does:<br />What do you choose to remember?</p><p>For humans, forgetting is an act of mercy.<br />For machines, it’s an act of survival.</p><p>As large language models evolve into autonomous agents , juggling thousands of files, messages, and micro-decisions , the constraint is no longer <em>what they can think</em>, but <em>what they can hold in mind</em>.<br />And the choices they make about memory - when to compress, what to keep, what to discard - quietly determine whether they perform like assistants or collapse like amnesiacs.</p><p>This is the unspoken frontier of AI design: <strong>Context Compression</strong>.<br />Not the engineering of intelligence, but the architecture of attention.</p><hr /><h3 id=\"1-the-irreversible-compression-paradox\">1. The Irreversible Compression Paradox</h3><p>The simplest form of forgetting is <strong>summarization</strong> — turning long histories into short notes. But this convenience hides a devastating flaw.</p><p><em>(P.S. This is one of those philosophical reasons why, even after coming across so many YouTube videos and summarisation tools, I’m still not in favour of using them. They make you unaware of the context , of why that information existed in the first place.)</em></p><p>Once you compress, you cannot always go back.</p><p>Every summarisation assumes you know which details will matter later.<br />But in multi-step reasoning, that assumption breaks almost instantly.<br />As engineers at Manus discovered, the act of compression itself becomes a <strong>prediction problem</strong> - one that no model can solve perfectly.</p><p>You cannot foresee which sentence, observation, or variable will unlock understanding ten steps later. Yet systems must compress <em>proactively</em>, before that future arrives.</p><p>So they face an impossible trade-off:<br />Save tokens, or save truth.</p><p><a href=\"https://manus.im/\">Manus</a>’s elegant workaround - treating the file system as “unlimited, restorable context” - isn’t just an engineering decision. It’s a philosophical one.<br />They refuse to forget irreversibly. Instead of summarising, they <em>refer</em>: URLs instead of web bodies, paths instead of contents.<br />They choose reversibility over efficiency.</p><p>And in that choice lies a quiet lesson for every AI team:<br />Intelligence is not just about knowing - it’s about preserving the possibility of knowing again.</p><figure><img src=\"/writing/ai-agents-memory-loss/img-1.webp\" alt=\"\" width=\"1456\" height=\"819\" loading=\"lazy\" /><figcaption><a href=\"https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus\">Source : Manus AI - Use the File System as Context</a></figcaption></figure><hr /><h3 id=\"2-the-cache-as-a-measure-of-mind\">2. The Cache as a Measure of Mind</h3><p>Every agent has a rhythm - a sequence of thoughts it repeats.<br />In production systems, this rhythm manifests as <em>cache reuse</em>.<br />When the same prompt prefix or state recurs, caching allows the model to “remember” without recomputing.</p><p>This might sound mundane. It’s not.<br />Cache hit rate has become the <strong>real heartbeat of scalable cognition</strong>.</p><p>A stable cache doesn’t just cut latency or cost; it preserves cognitive continuity.<br />A model with stable prompts behaves more predictably, reason more consistently, and costs exponentially less.<br />Perturb those prompts - say, by overzealous compression - and the illusion of continuity collapses.<br />You’ve taught the machine to forget its rhythm.</p><p>The lesson is counterintuitive:<br /><strong>Aggressive compression can make intelligence dumber and more expensive</strong>.</p><p>Optimization at the request level - the obsession with shaving off tokens - often destroys optimization at the task level.<br />In human terms, it’s like interrupting yourself mid-thought to rephrase every sentence - exhausting, redundant, incoherent.</p><figure><img src=\"/writing/ai-agents-memory-loss/img-2.webp\" alt=\"\" width=\"1456\" height=\"819\" loading=\"lazy\" /><figcaption><a href=\"https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus\">Source : Manus - Design Around KV Cache</a></figcaption></figure><hr /><h3 id=\"3-the-cliff-of-diminishing-returns\">3. The Cliff of Diminishing Returns</h3><p>Every engineer believes in “bigger is better” — larger context windows, larger models, larger memories.<br />But context length has a shadow: <em>attention diffusion.</em></p><p>Beyond a certain threshold - roughly 30,000 tokens for most modern models - performance doesn’t degrade gradually. It collapses.<br />The middle of the context becomes a cognitive void, where information goes to die.</p><p>Claude Sonnet 4.5 even shows signs of “context anxiety” - hallucinating shortcuts when it <em>thinks</em> it’s running out of space, even when it’s not.<br />Like a student who starts rushing answers near the end of an exam.</p><p>The irony is brutal:<br /><strong>More context can make models less intelligent.</strong></p><p>The engineers who grasp this treat context not as a bucket to fill, but as a landscape to navigate - pruning, folding, and reshaping thought so that focus, not fullness, drives performance.</p><p>Here’s a small video , that explains this effect and implications even more deeply : </p><p>(Source : <a href=\"https://arxiv.org/abs/2307.03172\">Research Paper - </a><strong><a href=\"https://arxiv.org/abs/2307.03172\">Lost in the Middle: How Language Models Use Long Contexts</a>)</strong></p><p class=\"embed-note\"><a href=\"https://theproductsensei.substack.com/p/ai-agents-memory-loss\">▶ Watch the video in the original post on Substack</a></p><hr /><h3 id=\"4-proactive-vs-reactive-memory\">4. Proactive vs. Reactive Memory</h3><p>The “Proactive vs. Reactive” distinction isn’t about <em>whether</em> to compress context, but <strong>when</strong> and <strong>how</strong> agents make memory management decisions:</p><ul><li><p><strong>Reactive Memory</strong>: Threshold-triggered compression that happens <em>when forced</em> (hitting token limits, time boundaries)</p></li><li><p><strong>Proactive Memory</strong>: Intelligence-driven compression that happens <em>when appropriate</em> (task phase transitions, natural breakpoints)</p></li></ul><p>The core tension: Reactive approaches treat compression as a consequence of capacity constraints, while proactive approaches treat it as a strategic cognitive operation. </p><p>(<a href=\"https://factory.ai/news/compressing-context\">Source - Factory AI : Context Compression Blog</a>)</p><p>Most AI systems compress reactively: they wait until the memory overflows, then summarise the past.<br />But by then, the damage is done.<br />The model has already spent tokens re-reading irrelevant noise.</p><p>Proactive compression → phase-based memory → flips that logic.<br /></p><p>When a task phase ends, the agent “closes the loop” on that mental context, condensing lessons before moving on.<br /></p><p>Manus does this through something deceptively simple: <em>todo.md</em> files that act as cognitive checkpoints. <a href=\"https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus#:~:text=Manipulate%20Attention%20Through%20Recitation\">(Source : Manus AI : Context Engineering for agents)</a></p><p>Each note says: “This is done. Archive it. Focus ahead.”</p><p>It’s not just better engineering , it’s cognitive hygiene.<br />The same way humans declutter their minds by journaling, these agents manage their attention to stay sane.</p><hr /><h3 id=\"5-the-completeness-coherence-trade-off\">5. The Completeness–Coherence Trade-off</h3><p>Retrieval-Augmented Generation (RAG) was meant to solve the context problem , to fetch only the relevant fragments, not the whole.<br />But new benchmarks suggest the opposite: for codebases, legal documents, and dense information, <em>whole-context reasoning</em> outperforms fragmented retrieval.</p><p>Why? Coherence.<br />Fragments break relationships between ideas.<br />The model stops seeing systems and starts seeing snippets.</p><p>The industry’s fixation on “smart retrieval” may be systematically eroding understanding - like teaching someone a language one word at a time.</p><p>The truth is nuanced.<br />Full context wins for stable, relationship-heavy domains.<br />Fragmented retrieval wins for dynamic, exploratory tasks.<br />And the best systems , human or machine , know when to switch.</p><hr /><h3 id=\"6-the-true-north-tokens-per-task\">6. The True North: Tokens per Task</h3><p>Across all these patterns lies a unifying principle:<br /><strong>Minimize tokens per task, not per request.</strong></p><p>A model that compresses aggressively per API call might seem efficient, but when that causes it to re-fetch or re-summarize information later, total cost skyrockets.</p><p>The optimization target isn’t the micro , it’s the macro.<br />Not how efficiently one thought is expressed, but how coherently the whole thinking process unfolds.</p><p>This is where context compression stops being a technical question and becomes a cognitive one.<br />You’re no longer managing data. You’re managing <em>attention</em>.<br />Not optimizing storage , optimizing <em>continuity of thought</em>.</p><hr /><h3 id=\"the-larger-reflection-designing-machines-that-remember-wisel\">The Larger Reflection: Designing Machines That Remember Wisely</h3><p>Every design decision about context , every compression, every cache, every retrieval rule encodes a philosophy of memory.</p><p>Do we trust the system to decide what’s worth keeping?<br />Do we value reversibility over efficiency?<br />Do we design for the single call, or for the arc of the conversation?</p><p>The answers will shape not just the economics of AI, but its psychology.<br /></p><p>Because intelligence, whether human or artificial, is not defined by what it knows ,<br />but by <strong>what it refuses to forget.</strong></p>"
+    },
+    {
+      "slug": "does-gen-z-really-want-to-bereal",
+      "title": "Does Gen-Z really want to \"BeReal\"?",
+      "subtitle": "A Commentary on the Rise , stagnation and downfall of BeReal App",
+      "description": "A Commentary on the Rise , stagnation and downfall of BeReal App",
+      "date": "2024-07-14T09:04:45.811Z",
+      "url": "https://theproductsensei.substack.com/p/does-gen-z-really-want-to-bereal",
+      "wordcount": 1068,
+      "readingMinutes": 5,
+      "cover": "/writing/does-gen-z-really-want-to-bereal/cover.webp",
+      "coverRemote": "https://substack-post-media.s3.amazonaws.com/public/images/45f670e7-b2c3-4b07-9df4-1ac434395333_2560x754.jpeg",
+      "toc": [
+        {
+          "id": "the-rise-of-be-real-movement",
+          "text": "The Rise of “Be Real” Movement",
+          "level": 2
+        },
+        {
+          "id": "is-bereal-really-a-real-solution",
+          "text": "Is “BeReal” really a real solution?",
+          "level": 2
+        },
+        {
+          "id": "the-online-authenticity-paradox",
+          "text": "The Online Authenticity Paradox",
+          "level": 2
+        },
+        {
+          "id": "the-real-problem-of-be-ing-real",
+          "text": "The Real Problem of “Be-ing Real”",
+          "level": 2
+        },
+        {
+          "id": "what-people-really-want",
+          "text": "What people really want?",
+          "level": 2
+        }
+      ],
+      "html": "<figure><img src=\"/writing/does-gen-z-really-want-to-bereal/img-0.webp\" alt=\"\" loading=\"lazy\" /></figure><p>Let’s start with What are the real psychological stresses that a Social media app creates for its users : </p><ul><li><p><strong>Artificial-ness</strong>: Need to be perfect in every shot.</p></li><li><p><strong>Comparison with peers</strong>: How to get maximum hype.</p></li><li><p><strong>Fear of Missing Out (FOMO)</strong>: Anxiety about missing updates and events.</p></li><li><p><strong>Unrealistic Expectations</strong>: Pressure to live up to curated realities.</p></li><li><p><strong>Pressure to Be Always Available</strong>: Stress from needing to respond immediately.</p></li><li><p><strong>Body Image Issues</strong>: Distorted perceptions from edited images.</p></li></ul><p>What if there was an app , that aimed to remove all that “Inherent Stresses” of social media. That was the single vision statement of BeReal.</p><h2 id=\"the-rise-of-be-real-movement\">The Rise of “Be Real” Movement</h2><p>To summarize the BeReal user experience: </p><ul><li><p>Once a day, at a random time, the app sends a push notification to its users, granting them two minutes to snap a two-way photo using their phones’ front- and rear-facing cameras. </p></li><li><p>Only after posting the daily photo can users see what their friends have posted . </p></li><li><p>Photos taken after the two-minute window are marked as late</p></li><li><p>Metadata tells how many times a photo has been retaken before the final image is posted—an element designed for transparency, but which seems more like a badge of shame. </p></li><li><p>There are no filters and no videos, just a stream of candid-seeming photo diptychs, all of which disappear once the next alert is sent.</p></li></ul><p>Starting in Jan’20, <strong>it took only 18 months to get to their $30m series A round with A16z (Andreessen Horowitz)</strong> - Thanks to Andrew Chen .</p><p>They built two really scalable growth engines that are very well known by consumer app specialists: </p><p><strong>1. Building a university ambassador program </strong></p><p><strong>2. Building momentum on Tiktok</strong></p><figure><img src=\"/writing/does-gen-z-really-want-to-bereal/img-1.webp\" alt=\"\" width=\"1456\" height=\"970\" loading=\"lazy\" /></figure><p>At its peak , it had an MAU of 53 Million . Out of which , about 3.3 Million users downloaded in Q1 2022 only. </p><h2 id=\"is-bereal-really-a-real-solution\">Is “BeReal” really a real solution?</h2><p>BeReal rose because it talked about a problem we Gen-Z folk know too well: </p><blockquote class=\"pullquote\"><p>“Social media puts pressure on us to present our best selves.”</p></blockquote><p> It markets itself as a social media app that understands the problems of Instagram or Facebook. But as much as it claims otherwise, BeReal still contains many of social media’s flaws.</p><p>Social media is a time suck. Social media is a pervasive, obnoxious distraction. </p><p>And what is BeReal’s usecase? </p><p>That every day, BeReal will ask you to drop everything, to post on their social media app. </p><p>And no, you can’t put it off! </p><p>You have to post on BeReal <em>right fucking now</em>, because BeReal commands you to. You have 2 minutes.</p><p>Essentially , BeReal is enducing a FOMO into the minds of users behind the curtains of “Authenticity”. </p><h2 id=\"the-online-authenticity-paradox\">The Online Authenticity Paradox</h2><p>If you really know about a human behavious , they tend to try to impress others. So why won’t it happen with BeReal ?</p><blockquote class=\"pullquote\"><p>In most cases, People either hurry to find something less embarrassing that they could plausibly be doing or simply skipped posting that day, thus missing out on the experience of Being Real entirely. </p></blockquote><p>Users may not be able to add filters or adjust the saturation in their posts, but they can still pose their pictures against their home’s nicest wall, or push dirty laundry out of view. </p><p><em>The only difference between BeReal and the social-media giants isn’t the former’s relationship to truth but the size and scale of its deceptions.</em></p><blockquote><p>Oliver Haimson, an assistant professor at the University of Michigan, calls this phenomenon “the online authenticity paradox”. </p></blockquote><p>We consider authenticity to be important, but often fall short of achieving it in our digital presences for very human reasons. </p><p>For example, because we want to share exciting moments with others, or we care what our followers think of us.</p><p>Those tendencies have made it hard for BeReal to live up to its name. </p><blockquote class=\"pullquote\"><p>“People were starting to realize that it’s not necessarily this promise of authenticity and realness that they were expecting it to be,” Dr. Haimson said.</p></blockquote><p>And this is clearly visible in the downfall of BeReal’s retention . </p><h2 id=\"the-real-problem-of-be-ing-real\">The Real Problem of “Be-ing Real”</h2><blockquote class=\"pullquote\"><p>Gen Z hops on trains really fast, but they hop off even faster.</p></blockquote><p>Only 9% of its active Android installs are opening the app every day as of the third quarter of this year, it found.</p><p>Many people (including myself) installed the app out of curiosity to check it out, but then abandoned the app as they didn’t end up enjoying the experience.</p><p>BeReal’s active installs % is far behind Instagram and TikTok. </p><p>Instagram leads this category with 39% of its active installs opening the app every day, while TikTok comes in second with 29%. </p><p>This is followed by Facebook, Snapchat, YouTube and Twitter at 27%, 26%, 20% and 18%, respectively.</p><p>With this USP of “Authencity” , BeReal’s monetization avenues really fall short.</p><ul><li><p>BeReal could make it so you have to pay if you want more than a certain number of friends in your friends list, but how many people would benefit from that? BeReal could make it so if you pay them, you can post more than once a day, but that undermines the whole point of the app. </p></li><li><p>Even the very idea of advertisements won’t really work. Imagine you’re scrolling through your BeReal feed, seeing the “authentic” daily lives of your friends, when you see a sponsored BeReal ad from Kardashians. It’s harder to find out who my friends really are if I have to search for their posts in a sea of ads.</p></li><li><p><strong>One Interesting way can be to use that “Concurrent Location Data” , sell it to companies to market their products at that location.</strong> </p></li></ul><h2 id=\"what-people-really-want\">What people really want? </h2><p>Humans are born with a desire for meaningful connection. </p><p>Every social media app promises us connection.</p><p>So let me ask: does BeReal help us make meaningful connections? Does it help us be authentic with our friends and loved ones? Is it more authentic than any of the following:</p><ul><li><p>Calling your friend on the phone?</p></li><li><p>Making plans to meet with them?</p></li><li><p>Sending them a handwritten letter?</p></li><li><p>Honestly telling them all about it they ask how your day’s been?</p></li><li><p>Asking thoughtful questions about your friend’s life?</p></li></ul><p>Before we download a social media app of any kind, we must remember the promises these apps make to us. </p><p>We must ask if those promises are met. </p><p><strong>And we must remember what we even want from these apps.</strong></p>"
+    },
+    {
+      "slug": "the-hike-and-the-fall",
+      "title": "The \"Hike\" and the Fall",
+      "subtitle": "A story of how Hike became the greatest messenger and then fell even harder",
+      "description": "The story of how Hike became the greatest messenger and then fell even harder",
+      "date": "2024-07-07T13:50:46.159Z",
+      "url": "https://theproductsensei.substack.com/p/the-hike-and-the-fall",
+      "wordcount": 974,
+      "readingMinutes": 4,
+      "cover": "/writing/the-hike-and-the-fall/cover.webp",
+      "coverRemote": "https://substack-post-media.s3.amazonaws.com/public/images/904f04a0-492a-4c5f-8171-3cb1ef2399f9_879x685.jpeg",
+      "toc": [
+        {
+          "id": "driving-organic-acquisition-the-growth-hacks",
+          "text": "Driving Organic Acquisition - The Growth Hacks",
+          "level": 2
+        },
+        {
+          "id": "hack-no-1-talktime",
+          "text": "Hack No. 1 : Talktime",
+          "level": 3
+        },
+        {
+          "id": "hack-no-2-privacy",
+          "text": "Hack No. 2 : Privacy",
+          "level": 3
+        },
+        {
+          "id": "snapshot-of-hike-s-peak",
+          "text": "Snapshot of Hike’s Peak :",
+          "level": 2
+        },
+        {
+          "id": "how-stickers-made-users-to-stick",
+          "text": "How “Stickers” made Users to stick ?",
+          "level": 2
+        },
+        {
+          "id": "hikey-dumpty-had-a-great-fall",
+          "text": "Hikey Dumpty had a great Fall",
+          "level": 2
+        }
+      ],
+      "html": "<p>If you are in your 20s or 30s , you must have seen the OG of Chatting Apps : </p><p>The Hike Messenger. </p><p>Still cannot remeber ? I’ll help you with that. </p><iframe src=\"https://www.youtube-nocookie.com/embed/dZwucQPzm5A?rel=0&amp;autoplay=0&amp;showinfo=0&amp;enablejsapi=0\" allowfullscreen=\"true\" width=\"728\" height=\"409\" title=\"Embedded video\"></iframe><p>“Life me thoda hike kar diya”. Yaad aaya? </p><p>Many believe that it was the fastest growing and the best messenger that the had seen. But then , what happened to it? </p><p>I have a 3-part story to tell about It :</p><ol><li><p>The biggest Growth Hack of that Time</p></li><li><p>How they increased frequency of Usage?</p></li><li><p>What lead to its downfall with time?</p></li></ol><h2 id=\"driving-organic-acquisition-the-growth-hacks\">Driving Organic Acquisition - The Growth Hacks</h2><p>From user interviews , they found that for their users , Internet was expensive (Remember? The pre Jio - 2G - era) . So how could they bring their network online?</p><p>And here comes the Hack. </p><h3 id=\"hack-no-1-talktime\">Hack No. 1 : Talktime</h3><p>One of the biggest growth hacks that Hike used was \"Talktime as a reward' .</p><p>Hike gave Talktime as an incentive to get their network on Hike.</p><p>Back then , when you used to install the app , You would get talktime and SMS data worth Rs. 50 and if you make a successful referral , that person wold get Rs. 25. Even if you referred someone and tat person is not on internet or hike , you would receive an SMS.</p><p>This lead to a massive amount of virality and user Inflow for Hike.</p><h3 id=\"hack-no-2-privacy\">Hack No. 2 : Privacy</h3><p>As people started to come to Hike in bunches , started to Show off and close groups formed , some newer needs emerged.</p><blockquote><p>Through interviews , Hike found out that those college kids , used to talk through their Dad's phone in their close groups , and then delete those chats at Night.</p></blockquote><blockquote class=\"pullquote\"><p>Also , an anecdote of a user who tells that His mom used to check his phone when he went for shower. To prevent that , he installed a App Locker. But mom being an Indian Mom , asked him to either unlock it or She'll tell the dad.</p></blockquote><p>And this insight , Ladies and Gentlemen , lead to the real aha moment .</p><p><strong>An app locker , which shows the same feedback on putting a right or wrong password. But real chats are there only if the password was right.</strong></p><h2 id=\"snapshot-of-hike-s-peak\">Snapshot of Hike’s Peak :</h2><ul><li><p>DAU - 22-23 Million</p></li><li><p>DAU/WAU - 57% (Yes, That is huge , but can be understood as its a closed network , If you found at least one or two close friends there , you are bound to chat daily.</p></li><li><p>D1 Retention - 95%</p></li><li><p>D30 Retention - 70-75%</p></li><li><p>Aha Moment - You found atleast two of your friends on Hike</p></li></ul><p>At the peak , Hike found that there were two different network circles forming :</p><ol><li><p>People who came to show off (small no. of 10+ people groups)</p></li><li><p>People who came to talk and feel connected with their people (large no. of 3-10 People groups).</p></li></ol><blockquote class=\"pullquote\"><p>People had found organic PMF - Me , my close friend , my girlfriend or boyfriend. Hike was the only product solving for this. This hidden chat solved for Privacy.</p></blockquote><p>Now , Hike had to solve for Frequency of usage. </p><h2 id=\"how-stickers-made-users-to-stick\">How “Stickers” made Users to stick ? </h2><p>Here was the problem statement : </p><p>Let's say if someone is sending 2-3 Messages a day , now can you increase this frequency by 15x of that .</p><p>The answer to this can also be understood by Fogg's behaviour model of Motivation , Ability and Trigger. </p><figure><img src=\"/writing/the-hike-and-the-fall/img-0.webp\" alt=\"\" width=\"561\" height=\"616\" loading=\"lazy\" /><figcaption>How Fogg’s behaviour model explains increase of Frequency of Usage from “Stickers”</figcaption></figure><ul><li><p>So , what was the motivation for their core userbase?</p><ul><li><p>They were mostly Teenage Lovey- dovey boys and girls? That wanted to send love texts to each other.</p></li></ul></li><li><p>What was the ability that current product gave? </p><ul><li><p>Text , typing out words</p></li></ul></li><li><p>What was the trigger?  </p><ul><li><p>Notification by other person.</p></li></ul></li></ul><p><em>And here’s how they solved that : </em></p><ul><li><p>How can you increase the motivation to send texts? </p><ul><li><p>By making it more full of emotion. </p></li></ul></li><li><p>How to do so? </p><ul><li><p>Use texts along with images as a picture tells a thousand words.</p></li></ul></li><li><p>And how to improve the ability? </p><ul><li><p>To click and send rather than typing it out. Simple.</p></li></ul></li></ul><p>It moved almost all the users above the Habit Line of Fogg's model.</p><blockquote class=\"pullquote\"><p>Casual users started to become core users and core users became power users.</p><p>Frequency of usage went up by upto 100%.</p></blockquote><p>Then they doubled up on that single feature. How can you make a sticker more interesting ? Add animations to it. What's after that? Add sound to it. Even better?</p><p>Make it full screen.</p><p>Damn.</p><h2 id=\"hikey-dumpty-had-a-great-fall\">Hikey Dumpty had a great Fall</h2><p>So , if it was such a big success story , Why did it not work? </p><p>Most people say that it was ahead of its time. But isn't it a good thing? </p><p>It cannot be the reason for sure.</p><p>Hike was from day 1 a \"Closed Network\". And as instagram began to boom , they thought they can become both for their users. You get either Open  Network , where you consume feed , share memes with each other or you can keep your network closed only , i.e. people who you chat with.</p><p>But remember , the core need of their users was Privacy. And as they created an open network in Hike , People started to think that It has evolved into something just like other social media apps and the core USP , Privacy was at risk.</p><p>If they hadn’t done that, Hike could still have been large at like 20-30 million DAU - that’s the number of people who wanted privacy. It was this need to become Instagram which really led to their downfall. </p><p><strong>The core Network started churning as soon as they felt that the privacy was taken away from them.</strong></p><p>This wraps my account for the rise and fall of Hike Messenger. </p><p>Do you have any comments on it ? Or have an interesting suggestion to cover in my next article , you can surely comment it down. </p>"
+    },
+    {
+      "slug": "understanding-indian-economy",
+      "title": "Understanding Indian Economy",
+      "subtitle": "Notes on Macro and Micro economic trends governing \"Indus Valley\"",
+      "description": "Notes on Macro and Micro economic trends governing \"Indus Valley\"",
+      "date": "2024-04-04T11:23:01.825Z",
+      "url": "https://theproductsensei.substack.com/p/understanding-indian-economy",
+      "wordcount": 1505,
+      "readingMinutes": 7,
+      "cover": "/writing/understanding-indian-economy/cover.webp",
+      "coverRemote": "https://substack-post-media.s3.amazonaws.com/public/images/2f68b351-373d-47a8-9403-8fce1ea9d929_1024x768.jpeg",
+      "toc": [
+        {
+          "id": "major-components-of-india-s-gdp",
+          "text": "Major Components of India’s GDP",
+          "level": 3
+        },
+        {
+          "id": "consumption-dominates-india-s-gdp",
+          "text": "Consumption Dominates India's GDP :",
+          "level": 3
+        },
+        {
+          "id": "understanding-india-1-india-2-1-and-india-2-2",
+          "text": "Understanding India 1, India 2.1, and India 2.2 :",
+          "level": 2
+        },
+        {
+          "id": "market-size-of-india-1",
+          "text": "Market Size of India 1 :",
+          "level": 3
+        },
+        {
+          "id": "growth-and-premiumization-of-india-1",
+          "text": "Growth and Premiumization of India -1",
+          "level": 3
+        },
+        {
+          "id": "rise-of-personal-loans",
+          "text": "Rise of Personal Loans",
+          "level": 3
+        },
+        {
+          "id": "india-s-biggest-export-people",
+          "text": "India’s Biggest Export - People",
+          "level": 3
+        },
+        {
+          "id": "india-s-digital-growth-pillar-dpi",
+          "text": "India’s Digital Growth Pillar - DPI",
+          "level": 3
+        },
+        {
+          "id": "rise-of-ondc",
+          "text": "Rise of ONDC",
+          "level": 3
+        }
+      ],
+      "html": "<figure><img src=\"/writing/understanding-indian-economy/img-0.webp\" alt=\"\" width=\"728\" height=\"546\" loading=\"lazy\" /></figure><h3 id=\"major-components-of-india-s-gdp\">Major Components of India’s GDP</h3><p>Indian economy is led by consumption. Why not others like GFCF?</p><p>It is low due to underinvestment by Private Players.</p><h4>→ Why they are underinvesting? </h4><p>Coz their shares are reducing and they are borrowing less meaning less investment in GFCF.</p><p>Why are they borrowing less?  Two main reasons are : </p><p>\t1. NPA Crisis of 2015-18 and Uncertainties of covid</p><p>\t2. Low Capacity Utilization</p><h4>→ Why is not government Overinvesting to catch up?</h4><p>Major sources of money for government are :</p><ol><li><p>Taxes </p></li><li><p>Debt</p></li></ol><h5>So , Where does all the Taxes that we pay go ? </h5><p>India's Tax to GDP % is at avg ~16% since last 7 years while UK , US , Japan , China average at ~ 27%</p><p>From That , Income Tax stands at 3% of GDP.</p><h5><em><strong>Some Numbers Crunching : </strong></em> </h5><ul><li><p>India’s Population - 1420 Million</p></li><li><p>Tax Filers - 74 Mn ~5%</p></li><li><p>Tax Payers - 22 mn ~1.5% (China ~10% , USA ~43%)</p></li><li><p>80% tax is payed by 0.3% of Population (4.5 Million People) </p></li></ul><p><strong>Results</strong> →  Govt relies on Borrowings →</p><p>In Response , Public Debt Rise </p><p>And the proof is “<strong>Higher Debt to GDP Ratio”</strong> of govt (~85% avg last 3 years) .</p><blockquote class=\"pullquote\"><p>                     Govt debt rose by 4x in Rs. Terms in last 10 Years</p></blockquote><p><strong>So , what happened?</strong></p><p>When govt borrows more than private players , Govt have to repay more , so they have to issue more bonds. </p><blockquote class=\"pullquote\"><p>India's bond market is 67% of GDP , of which corporate is at ~24% while govt bonds have a share of ~76%</p></blockquote><h3 id=\"consumption-dominates-india-s-gdp\">Consumption Dominates India's GDP :</h3><ul><li><p>60% of GDP is consumption based that is one high reason of india being low investment into GFCF</p></li><li><p>That Consumption is dominated by 75% in grocery (~40 % in China and 30% in US).</p></li></ul><p>But with such high spending on Necessities , india is fairly low in consumption in several categories. </p><h4><em>Why is it so low?</em> </h4><p>To understand it , Let’s go by the famous classification of India-1 , 2 and 3. By Mithun Madhusudan ‘s <a href=\"https://open.substack.com/pub/theindianpivot\">The Indian Pivot</a> . </p><h2 id=\"understanding-india-1-india-2-1-and-india-2-2\">Understanding India 1, India 2.1, and India 2.2 : <br /></h2><ul><li><p>India 1 : </p><ul><li><p>High paying capacity (&gt;$15000 yearly income) . </p></li><li><p>~8.5% of Population. </p></li><li><p>High income, English-first audience similar to the West. <br />✅Anything that worked in the West will work here.</p></li></ul></li><li><p>India 2 : </p><ul><li><p>~21% Population at ~3k$ yearly income . </p></li><li><p>High Consumers and reluctant payers. </p></li><li><p>UPI and Autopay enabled monetization here. </p></li><li><p>Further Breakdown : </p><ul><li><p>India 2.1 : Young aspirational middle-income people with regional language as a priority. </p><ul><li><p>✅Anything that works in the mass market like China (micropayments-based services, new models of e-commerce, fintech - mutual funds, insurance penetration, edtech, etc.).</p></li></ul></li><li><p>India 2.2 : Older middle-income individuals. </p><ul><li><p>✅Anything that enables them to rise to India 2.1 can work - banking enablers, credit enablers.</p></li></ul></li></ul></li></ul></li><li><p>India 3 :  </p><ul><li><p>~70% Population at ~1k$ . </p></li><li><p>✅Anything , that helps in their everyday life , connectivity , or even enabling govt. subsidies for them may work but this is highly unmonetizable market.</p></li></ul></li></ul><p><br /><br /><strong>A thumb rule 👇🏻:</strong> </p><blockquote class=\"pullquote\"><p>All apps in India3 can be used by India2 and India1. Similarly India2 apps can be used by India1. The reverse isn’t true. India1 apps are not used by India2 or India3.</p></blockquote><h3 id=\"market-size-of-india-1\">Market Size of India 1 : </h3><p><em>The Outer Limit of Consuming Class in India is 30 million households . How ?</em> </p><ul><li><p>30 mn wired broadband homes</p></li><li><p>Less than 30 mn demat accounts wit &gt;10K holdings</p></li><li><p>25-30 mn Car-owning households</p></li><li><p>25-30 mn households use internet</p></li><li><p>40 Mn MF Investors</p></li><li><p>33 Mn credit card using households</p></li></ul><h3 id=\"growth-and-premiumization-of-india-1\">Growth and Premiumization of India -1</h3><p>India's consuming class is growing steadily - 0.5% in 1995 to 8% in 2020 i.e. Annual Growth rate of 141%. </p><p>And doubling in many cateories like Demat Accounts , postpaid , Broadband , Credit in last 4-5 years</p><h5>Premiumization 💲</h5><p>This growing consumer class is preferring more of Premium products than mass products as shown by these numbers of Revenue CAGR in 19-22 FY : </p><ul><li><p>Vmart 14%  Zara -18% </p></li><li><p>Mahindra 1% , BMW 5%</p></li><li><p>Entry Level Vehicle sales declining while SUV market share is on Rise4</p></li></ul><h5>Growth 🚀</h5><p>India 1 - The high consuming class of India , i.e. growing at a CAGR of 141% in volume has a secondary impact on stock market. How? 👇🏻</p><p>→ As India 1's disposable incomes are growing , they are looking for better saving avenues to beat Inflation. </p><p>✅And a vast majority of their savings go into stocks as SIPs which stablized the market even in the times when FIIs  (Foreign institutional investors ) were selling.</p><p><em>This resulted in an Interesting trend shift :</em> </p><p><strong>In India , FIIs are not Dominant players , DIIs (Domestic Institutional Investors) have surpassed them.</strong></p><blockquote class=\"pullquote\"><p>In last Decade , DIIs investment has increased from 3.35 to 9.1%  i.e. ~3X increase.</p></blockquote><p>Breaking down Domestic Inflows : </p><ul><li><p>60%  goes into Retail and MF </p></li><li><p>24% EPFO and NPS </p></li><li><p>And rest in Insurance. </p></li></ul><p>Due to India's consumption class being affluent and on the rise , Savings and investments increased. </p><p>SIP inflow have rose from 6.7Bn$ to 18.8Bn$ in last 6 Years. Result ? </p><p>→ Domestic MF own 17.6% of NSE's free floating Market Cap</p><p><strong>India 1 and the “Indian Wall Street”</strong> </p><p>India 1's rising dispsable incomes are leading to increase in retail investors.</p><blockquote class=\"pullquote\"><p> There's a 6 times growth in no. of investors who did atleast 1 trade.</p></blockquote><p>So much money flowing into stock markets have made india an Outperformer but expensive market. </p><p><em>India's Market Cap to GDP % has increased to 120% in 2023 , this indicator is known as Buffet's indicator</em></p><h3 id=\"rise-of-personal-loans\">Rise of Personal Loans</h3><p>Personal Loans have grown 12x by Volume but only 3.5% by value </p><p>     → Meaning a lot lot more people are taking credit but of small ticket size &lt;1Lac. </p><p>In last 5 years , there is a 31x growth in volume of small ticket size loans. </p><p>82% of all personal loans are given by NBFCs which make up only 30% in value. </p><p>      → Means , People who take large personal loans still prefer Banks over NBFCs. </p><p>Out of all personal loans , in FY 18 , 35% were small ticket which rose to 87% in FY23</p><p>Due to this growth in Personal loans , retail credit have become largest segment of credit in india having 72% of the overall market share of Personal Loans (~466Bn $ market) </p><h4><strong>Quality of Loans market</strong> </h4><blockquote class=\"pullquote\"><p>Around 10% of borrowers account for about 40% of total loans. These have 5+ loans.     </p></blockquote><p><em>What is happening here?</em> </p><p>In order to increase their target market for loans disbursement , NBFCs are playing with the core principle that loans are to be given to be taken back not to be defaulted again. </p><p>What has happened due to it? </p><p>    → ~25% of loans of less than 50k are NPAs .</p><blockquote><p>That’s what concerned RBI and in Dec'23 , they intervened by increasing risk weight of personal loans to 125%  which caused lenders to need to raise more capital to grow. </p></blockquote><p>According to India 1+2 segment - 100Mn households , or 258 Mn borrowers is the outer limit for Addressable market of credit where , New to credit customers are typically from bottom half of India 2 , economically not fine , not knowing how credit works and discipline of paying it back.</p><h3 id=\"india-s-biggest-export-people\">India’s Biggest Export - People</h3><blockquote class=\"pullquote\"><p>India's Largest export is not Software , but People . </p></blockquote><p>Indians send back the highest amount of money back to country ($100Bn , 2nd Being Mexico at $60Bn) and that Remittance is growing at the rate of 56% YoY.  </p><p>This accounts for more than 20% of the total foreign exchange in country.</p><h3 id=\"india-s-digital-growth-pillar-dpi\">India’s Digital Growth Pillar - DPI </h3><p>In last 15 Years , India became a Digital Welfare State , using DPI (Digital Public Infrastructure) for welfare. </p><p>Key Numbers - </p><ul><li><p>~ 1360 Mn (97%) Indians covered by aadhar</p></li><li><p>~ 500 Mn Indians have jan Dhan bank account</p></li><li><p>In aug 23 , UPI Crossed 10 Bn Monthly Transactions </p></li></ul><p>This DPI supported transfers of $350 Bn using DBT and saved total of $33 Bn i.e. 1.14% of GDP.</p><p>This also emerged as opportunities for new startups to build efficiently on top of DPI. </p><p>For Example : </p><ul><li><p>Aadhar and E-KYC -&gt; User Onboarding (Faster KYC) -&gt; Groww , Slice , Jio , Zerodha</p></li><li><p>UPI -&gt; Consumer apps for payments -&gt; Paytm , Phonepe, Gpay</p></li><li><p>Digilocker -&gt; Documents access for Verification -&gt; Cred, Zerodha</p></li><li><p>ONDC -&gt; Consumer and Seller apps over ONDC protocol -&gt; Namma yatri , Magicpin</p></li><li><p>Sahamati -&gt; Account aggregator or Lenging using AA framework -&gt; FinVU , Onemoney ,LendingKart</p></li></ul><h3 id=\"rise-of-ondc\">Rise of ONDC </h3><p>In Jan'24 , 6.5 Mn transactions happened on ONDC . </p><p>As per Blume's report , On ONDC , Mobility has hit PMF - Clear business model is there , e.g. Namma Yatri charges drivers a daily flat fee.</p><p>Ecommerce is in early days and Credit would be launching soon. </p><p>ONDC’s goal is to enable every seller to have access to the same tools that Amazon or Flipkart has. A big focus is Kirana stores and helping them be able to sell, instead of large sellers dominating like Cloudtail. That said it isn’t entirely clear how the ecommerce and credit space will evolve. Mobility is a lot more clearer. </p><p>But as we saw in UPI , It created value for Users , not for Providers. Similar thing should not happen in ONDC , but still , as per ONDC , margins would still be single digit. Current Focus of ONDC team is on skilling , training partners , etc. </p>"
+    },
+    {
+      "slug": "demystifying-venture-capital",
+      "title": "Demystifying Venture Capital",
+      "subtitle": "An In-Depth Look at VC Mechanics and Impact in India",
+      "description": "An In-Depth Look at VC Mechanics , Cost Structure and Profit Sharing",
+      "date": "2024-01-29T05:45:24.549Z",
+      "url": "https://theproductsensei.substack.com/p/demystifying-venture-capital",
+      "wordcount": 811,
+      "readingMinutes": 4,
+      "cover": "/writing/demystifying-venture-capital/cover.webp",
+      "coverRemote": "https://substack-post-media.s3.amazonaws.com/public/images/0af75815-d530-432b-b361-2381ebaba050_1344x896.jpeg",
+      "toc": [
+        {
+          "id": "understanding-venture-capital",
+          "text": "Understanding Venture Capital",
+          "level": 2
+        },
+        {
+          "id": "the-role-of-venture-capital-in-business-growth",
+          "text": "The Role of Venture Capital in Business Growth",
+          "level": 2
+        },
+        {
+          "id": "key-players-in-the-indian-venture-capital-landscape",
+          "text": "Key Players in the Indian Venture Capital Landscape",
+          "level": 3
+        },
+        {
+          "id": "roles-in-a-venture-capital-firm",
+          "text": "Roles in a Venture Capital Firm",
+          "level": 3
+        },
+        {
+          "id": "fee-structure-and-lifecycle-of-venture-capital-funds",
+          "text": "Fee Structure and Lifecycle of Venture Capital Funds",
+          "level": 2
+        },
+        {
+          "id": "the-complexities-of-venture-capital-returns",
+          "text": "The Complexities of Venture Capital Returns",
+          "level": 2
+        },
+        {
+          "id": "the-investment-and-return-mechanism",
+          "text": "The Investment and Return Mechanism",
+          "level": 3
+        },
+        {
+          "id": "the-long-road-to-returns",
+          "text": "The Long Road to Returns",
+          "level": 2
+        },
+        {
+          "id": "conclusion",
+          "text": "Conclusion",
+          "level": 2
+        }
+      ],
+      "html": "<p>Venture capital (VC) is a pivotal component of the financial landscape, particularly in the burgeoning Indian startup ecosystem. This in-depth article, based on a transcript involving knowledgeable speakers, delves into the intricacies of venture capital, its operational dynamics, and its significant role in shaping businesses from infancy to maturity.</p><figure><img src=\"/writing/demystifying-venture-capital/img-0.webp\" alt=\"\" loading=\"lazy\" /></figure><h2 id=\"understanding-venture-capital\"><strong>Understanding Venture Capital</strong></h2><p>Venture capital represents institutional capital, distinctly separate from individual investments. This organized team-driven funding ranges significantly in size:</p><ul><li><p>Small funds may encompass around 100 crores.</p></li><li><p>Larger funds can soar to staggering amounts, such as 25,000 to 50,000 crores in India and even $100 billion, as seen in the <a href=\"https://visionfund.com/in\">Vision Fund by SoftBank.</a></p></li></ul><p>VC serves as a crucial lifeline for startups, providing the necessary capital to transition from conceptual stages to operational businesses. The funding spans various stages, starting with seed capital (typically in the range of 2 to 3 crores for individual companies) and progressing through series A, C, and beyond, until a company achieves profitability.</p><h2 id=\"the-role-of-venture-capital-in-business-growth\"><strong>The Role of Venture Capital in Business Growth</strong></h2><p>Venture capital is instrumental in taking a company from its nascent stage to a point of profitability. Once a company is profitable and established, the focus often shifts to private equity or growth capital.</p><h3 id=\"key-players-in-the-indian-venture-capital-landscape\"><strong>Key Players in the Indian Venture Capital Landscape</strong></h3><p>India's VC scene is vibrant, with numerous well-established firms. Prominent names include:</p><ul><li><p><a href=\"https://blume.vc/\">Blume Ventures</a></p></li><li><p><a href=\"https://www.accel.com/\">Accel</a></p></li><li><p><a href=\"https://www.peakxv.com/\">Peak XV Partners</a> (Former Sequoia India)</p></li><li><p><a href=\"https://lsvp.com/\">Light Speed Ventures</a></p></li><li><p><a href=\"https://nexusvp.com/\">Nexus Venture Partners</a></p></li><li><p><a href=\"https://elevationcapital.com/\">Elevation</a></p></li><li><p><a href=\"https://www.chiratae.com/\">Chiratae</a></p></li><li><p><a href=\"https://kalaari.com/\">Kalaari Capital</a></p></li><li><p><a href=\"https://www.matrixpartners.in/\">Matrix Partners</a></p></li></ul><p>These firms have been pivotal in fostering a conducive environment for startups in India.</p><h3 id=\"roles-in-a-venture-capital-firm\"><strong>Roles in a Venture Capital Firm</strong></h3><p>Typical roles in a venture capital firm include:</p><ol><li><p><strong>General Partners</strong>: Responsible for all fund investment decisions and normally invest their capital in the fund.</p></li><li><p><strong>Venture Partners</strong>: Source investment opportunities and are paid based on deals they close</p></li><li><p><strong>Principals</strong>: Mid-level, investment-focused position. With experience in investment banking or other experience relative to the fund’s investment strategy</p></li><li><p><strong>Associates</strong>: Junior staff with some experience in investment banking or management consulting</p></li><li><p><strong>Entrepreneur-in-Residence</strong>: Industry experts who are hired as advisors or consultants to the venture capital firm temporarily, often to assist with due diligence or pitching new startup ideas.</p></li></ol><h2 id=\"fee-structure-and-lifecycle-of-venture-capital-funds\"><strong>Fee Structure and Lifecycle of Venture Capital Funds</strong></h2><p>Typically, VC firms operate on a 10-year lifecycle with an option for a 2-3 year extension. The fee structure usually involves:</p><ul><li><p>An annual management fee of 2% of the funds raised.</p></li><li><p>A 'carry', or carried interest, constituting 20% of the fund's gains. </p><ul><li><p>This is only applicable upon the successful exit from an investment, which can occur through : </p><ul><li><p>public offerings, </p></li><li><p>strategic sales (e.g., acquisition by larger companies like Google), </p></li><li><p>or buyouts by later-stage funds.</p></li></ul></li></ul></li></ul><h2 id=\"the-complexities-of-venture-capital-returns\"><strong>The Complexities of Venture Capital Returns</strong></h2><p>Determining the returns from venture capital investments is intricate. Unlike deal-by-deal returns in exclusive funds, most VC returns are subjected to a collective assessment, where the entire capital invested, plus the fees consumed over the fund's lifecycle, must be recouped before any profit-sharing occurs.</p><h3 id=\"the-investment-and-return-mechanism\"><strong>The Investment and Return Mechanism</strong></h3><p>The distribution of profits follows a European or American waterfall model, where <strong>fund managers receive carry only after returning the total capital invested, along with the fees consumed.</strong> The incentives are aligned to encourage hard work as it may take several years before the fund managers can realize any profits from their investments.</p><p>For instance, if a VC invests 100 bucks, only about 80 is typically invested directly into businesses, with the remaining 20 covering various expenses. The fund must not only return the entire 100 but also meet a threshold internal rate of return (IRR), which often ranges from 8 to 10%. Only after surpassing this threshold can the fund begin to distribute profits and carried interest.</p><p>A detailed insight of what is a quite plausible expectation from various assets can be found in this image from the blog post of  <a href=\"https://www.industryventures.com/insight/the-venture-capital-risk-and-return-matrix/\">Industry Ventures LLC : </a> </p><figure><img src=\"/writing/demystifying-venture-capital/img-1.webp\" alt=\"\" width=\"669\" height=\"288\" loading=\"lazy\" /></figure><h2 id=\"the-long-road-to-returns\"><strong>The Long Road to Returns</strong></h2><p>The journey to realizing returns in VC is long and arduous. Even successful funds may take a decade to see substantial returns. The stringent criteria for profit distribution ensure that the interests of fund managers are closely aligned with the performance of their investments, thereby fostering a highly motivated approach to business growth and success.</p><h2 id=\"conclusion\"><strong>Conclusion</strong></h2><p>Venture capital in India, while complex and challenging, is a vital cog in the wheel of entrepreneurial success. It not only provides the necessary financial backing for startups but also ensures a rigorous, performance-driven approach to business development. As the Indian startup landscape continues to evolve, the role of venture capital will undoubtedly become increasingly significant, shaping the future of innovation and entrepreneurship in the region.</p>"
+    },
+    {
+      "slug": "the-writers-dillemma",
+      "title": "The Writer's Dillemma",
+      "subtitle": "What are you writing - What you love or What other's love?",
+      "description": "What are you writing - What you love or What other's love?",
+      "date": "2024-01-04T08:32:44.831Z",
+      "url": "https://theproductsensei.substack.com/p/the-writers-dillemma",
+      "wordcount": 572,
+      "readingMinutes": 2,
+      "cover": "/writing/the-writers-dillemma/cover.webp",
+      "coverRemote": "https://substack-post-media.s3.amazonaws.com/public/images/7d1cd2d8-c6f9-434f-82a7-f1088c2bd6c3_2688x896.png",
+      "toc": [
+        {
+          "id": "write-what-you-love-putting-your-heart-on-paper",
+          "text": "Write What You Love: Putting Your Heart on Paper",
+          "level": 2
+        },
+        {
+          "id": "write-what-others-love-catching-the-trend-train",
+          "text": "Write What Others Love: Catching the Trend Train",
+          "level": 2
+        },
+        {
+          "id": "the-middle-path-blending-your-passion-with-popularity",
+          "text": "The Middle Path: Blending Your Passion with Popularity",
+          "level": 2
+        },
+        {
+          "id": "writing-your-story-the-adventure-begins",
+          "text": "Writing Your Story: The Adventure Begins",
+          "level": 2
+        },
+        {
+          "id": "keeping-the-balance-your-story-their-story",
+          "text": "Keeping the Balance: Your Story, Their Story",
+          "level": 2
+        },
+        {
+          "id": "so-its-your-story-your-way",
+          "text": "So , Its Your Story, Your Way",
+          "level": 2
+        }
+      ],
+      "html": "<figure><img src=\"/writing/the-writers-dillemma/img-0.webp\" alt=\"\" loading=\"lazy\" /></figure><blockquote><p>\"You can make anything by writing.\" - C.S. Lewis </p></blockquote><h2 id=\"write-what-you-love-putting-your-heart-on-paper\">Write What You Love: Putting Your Heart on Paper</h2><p>Have you ever thought about writing a story about your favorite things? Maybe it's about a space adventure, a magical kingdom, or your favorite sport. Writing what you love is super cool because it lets your imagination run wild. It's like painting a picture with words, and the best part?  Same thing happens when you start writing in Product management . Should you write about News , Fundings , Downfalls , Business analysis , PM Guru kind of Stuff , Learnings or what not.</p><p>The story is all yours, straight from your heart. But sometimes, what we love might not be what everyone else loves. That's the tricky part.</p><h2 id=\"write-what-others-love-catching-the-trend-train\">Write What Others Love: Catching the Trend Train</h2><p>On the other side, some writers think about what everyone else likes to read. It's like being a detective, figuring out what kinds of stories are popular. If lots of people are into PM Learnings or Numbers stuff , you might think about writing one. This way, your stories might become popular because they’re just what people are looking for. But here's the thing: trends change like the weather. What's cool today might not be cool tomorrow.</p><h2 id=\"the-middle-path-blending-your-passion-with-popularity\">The Middle Path: Blending Your Passion with Popularity</h2><p>So, what's the best way? Imagine making a smoothie with two of your favorite fruits. One fruit is what you love, and the other is what everyone else loves. Mixing them together can make an awesome smoothie, right? It's the same with writing. Try to mix a bit of your own magic with what's popular. This way, you can create a story that's true to yourself and also something that others might enjoy.  </p><h2 id=\"writing-your-story-the-adventure-begins\">Writing Your Story: The Adventure Begins</h2><p>Writing is an amazing journey. It's not just about putting words on a page; it's about creating worlds, characters, and adventures. When you write, you're the boss of your story. You decide what happens, who the heroes are, and where the story goes. But remember, it's also cool to think about who will read your story. After all, stories are meant to be shared.</p><h2 id=\"keeping-the-balance-your-story-their-story\">Keeping the Balance: Your Story, Their Story</h2><p>Finding the right balance is key. You don't want to lose what makes your story special – your own touch. At the same time, it's good to have a story that others can connect with. It's like making a new recipe. You want it to taste good to you, but also to others.</p><h2 id=\"so-its-your-story-your-way\">So , Its Your Story, Your Way </h2><p>In the end, the best story is the one that you're excited about. Whether it's a story that comes from your wildest dreams or a story that fits what everyone is reading, the most important thing is that it's your story. So grab your pen, open your notebook, and start your writing adventure. Remember, every great story starts with a single word. And who knows, your story might just be the next big thing!</p><p>---</p><p>So, there you go! Whether you're a young writer or just young at heart, remember that writing is all about finding your voice and sharing your stories with the world. Keep writing, keep dreaming, and most importantly, have fun with it!</p>"
+    },
+    {
+      "slug": "cricket-how-to-hook-like-its-a-religion",
+      "title": "Cricket - How to Hook like it's a Religion !",
+      "subtitle": "Disecting a game of cricket to understand how the \"Hooked Framework\" work.",
+      "description": "Disecting a game of cricket to understand how the \"Hooked Framework\" work.",
+      "date": "2023-10-25T05:25:05.584Z",
+      "url": "https://theproductsensei.substack.com/p/cricket-how-to-hook-like-its-a-religion",
+      "wordcount": 784,
+      "readingMinutes": 3,
+      "cover": "/writing/cricket-how-to-hook-like-its-a-religion/cover.webp",
+      "coverRemote": "https://substack-post-media.s3.amazonaws.com/public/images/14545d2b-7285-4982-b7f0-3a3eb0a6985a_1464x976.jpeg",
+      "toc": [],
+      "html": "<blockquote class=\"pullquote\"><p>Have you ever wondered how Cricket became a new religion? What is the Hook in this game which have made people spend 59 billion minutes of watch-time in first 11 Matches of the tournament !</p></blockquote><figure><img src=\"/writing/cricket-how-to-hook-like-its-a-religion/img-0.webp\" alt=\"\" loading=\"lazy\" /></figure><p>To understand How its just like a ‘religion’ , Let’s start with how immense is Cricket in India in terms of numbers : </p><ul><li><p>In India vs New Zealand match in ODI World Cup 2023 , as King Virat Khli came to bowl , that racy action spread over 15 minutes took Hotstar’s peak viewership numbers up to 43 million (To put it in context New Zealand’s population is a little over 5 million). The new viewership record comfortably went past the previous peak (35 million), from the India-Pakistan match, earlier in this tournament.</p></li><li><p>The Board of Control for Cricket in India (BCCI) earned ₹6,558 crore (US$820 million) in the 2022-2023 financial year. </p></li><li><p>The 2023 Indian Premier League (IPL) had 505 million viewers on television. </p></li><li><p>91% of Indian sports fans watch cricket. </p></li></ul><p>So , Have you ever wondered how Cricket became a new religion? What is the Hook in this game which have made people spend 59 billion minutes of watch-time in first 11 Matches of the tournament !</p><p>Let’s disect the game using Hooked Framework by Nir Eyal : </p><p>The Hooked Framework, as explained by Nir Eyal in his book \"Hooked: How to Build Habit-Forming Products,\" is a model used to understand user engagement and addiction to products or experiences . It consists of four key components: Trigger, Action, Variable Reward, and Investment. </p><p>Let's apply this framework to dissect how a game of cricket hooks a viewer:</p><ol><li><p><strong>Trigger</strong>:</p><ul><li><p><strong>External Triggers</strong>: These are cues from the external environment that prompt the viewer to think about watching a cricket game.</p><ul><li><p>TV advertisements, social media posts (Hats off to the fastest news reporters of world #OurMemers)</p></li><li><p>Conversations with friends about an upcoming match (C’mon , you too have that whatsapp group where no. of messages increase in proportion to no. of matches into the tournament)</p></li></ul></li><li><p><strong>Internal Triggers</strong>: Internal triggers are emotions, thoughts, or feelings that drive the viewer's desire to watch a cricket game. </p><ul><li><p>They could be the excitement and anticipation of a high-stakes match</p></li><li><p>A personal emotional connection to a favorite team or player</p></li><li><p>The need for entertainment - Yes , its indeed the biggest entertainer after bollywood.</p></li></ul></li></ul></li><li><p><strong>Action</strong>:</p><ul><li><p>The action phase involves the viewer taking steps to engage with the cricket game. </p><ul><li><p>Turning on the TV (As far as TV Channels can get the broadcasting rights)</p></li><li><p>Logging into Hotstar (as they have the rights now 😀) and streaming the match </p></li><li><p>Purchasing tickets to attend the match in person (Book my show , you need to improve over here a lot).</p></li></ul></li><li><p>These actions can also include interacting with cricket-related content, such as : </p><ul><li><p>Checking live scores (Hail Crickbuzz Fans)</p></li><li><p>Reading news articles </p></li><li><p>or Discussing the game on social media (😉Commenting on memes)</p></li></ul></li></ul></li><li><p><strong>Variable Reward</strong>:</p><ul><li><p>The variable reward in cricket viewing comes from the unpredictability and excitement of the game (😲Here goes the 5th ball of last over - What would happen ? Is it a 6 , 4 , Catch-Out - Oh! That’s a run out !). Viewers are uncertain about the outcome, and this uncertainty creates anticipation. They receive various rewards throughout the match:</p><ul><li><p><strong>Emotional Rewards</strong>: Moments of excitement, joy, and even disappointment (😥That run out of MS Dhoni in 2019 ODI World Cup Semifinals ) as the game progresses.</p></li><li><p><strong>Social Rewards</strong>: Interacting with friends and fellow fans during and after the game, sharing thoughts and emotions. </p></li><li><p><strong>Intellectual Rewards</strong>: Analyzing the strategies, statistics, and performance of players and teams.</p></li></ul></li></ul></li><li><p><strong>Investment</strong>:</p><ul><li><p>Investment here is the effort, time, or resources the viewer puts into the cricket experience. It's a crucial part of the Hooked Framework because it increases the likelihood of the viewer returning for future games.</p></li><li><p>Investments in cricket viewing can include:</p><ul><li><p><strong>Time</strong>: Spending hours watching the game, including pre-match and post-match discussions.</p></li><li><p><strong>Social Investment</strong>: Forming connections with other fans, attending games with friends, or joining fan clubs.</p></li><li><p><strong>Financial Investment</strong>: Buying tickets, merchandise, or subscriptions to cricket streaming services.</p></li></ul></li></ul></li></ol><blockquote class=\"pullquote\"><p>In the context of a cricket game, the Hooked Framework shows how viewers are continually driven to engage with the game. They are triggered by external and internal cues, take actions to start watching, experience variable rewards through the excitement and uncertainty of the match, and invest time, social connections, and even money, thereby increasing their chances of returning to watch future matches. </p></blockquote><p><em>Follow for more interesting content on psychology, user engagement, and the fascinating world of human behavior!</em></p>"
+    }
+  ]
+}

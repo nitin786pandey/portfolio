@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * Fixed background layers from the v2 draft:
@@ -12,6 +13,7 @@ import { useEffect, useRef } from "react";
  */
 export default function Ambient() {
   const canvas = useRef<HTMLCanvasElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -126,7 +128,7 @@ export default function Ambient() {
     }
 
     return () => cleanups.forEach((f) => f());
-  }, []);
+  }, [pathname]);
 
   return (
     <>

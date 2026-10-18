@@ -1,23 +1,17 @@
 import type { CSSProperties } from "react";
 import Ambient from "@/components/Ambient";
 import Principles from "@/components/Principles";
-import { notes, principles, site, stats } from "@/content";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import NoteCard from "@/components/NoteCard";
+import { featured, publication } from "@/lib/posts";
+import { principles, site, stats } from "@/content";
 
 const vars = (o: Record<string, string | number>) => o as CSSProperties;
 const linkedin = site.linkedin ?? "#";
 const ext = (href: string) =>
   href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
 
-const LinkedInIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z" />
-  </svg>
-);
-const GitHubIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.8 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z" />
-  </svg>
-);
 
 export default function Home() {
   const personJsonLd = {
@@ -36,29 +30,7 @@ export default function Home() {
       </a>
       <Ambient />
 
-      <nav aria-label="Primary">
-        <div className="wrap">
-          <a href="#top" className="logo">
-            <i aria-hidden="true" />
-            Nitin Pandey
-          </a>
-          <div className="links mono">
-            <a href="#work">Work</a>
-            <a href="#playground">Playground</a>
-            <a href="#notes">Notes</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <div className="ico">
-            {/* [LinkedIn URL: Nitin to provide] */}
-            <a href={linkedin} aria-label="LinkedIn" {...ext(linkedin)}>
-              <LinkedInIcon />
-            </a>
-            <a href={site.github} aria-label="GitHub" {...ext(site.github)}>
-              <GitHubIcon />
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       <main id="top">
         <div className="wrap">
@@ -342,20 +314,22 @@ export default function Home() {
                 <div className="ey mono">03 · Notes</div>
                 <h2 id="notes-title">Thinking out loud</h2>
               </div>
-              <p className="mono">on building with LLMs</p>
+              <p className="mono">
+                from{" "}
+                <a className="sub-link" href={publication.url} target="_blank" rel="noopener noreferrer">
+                  {publication.name} ↗
+                </a>
+              </p>
             </div>
             <div className="notes">
-              {notes.map((n, i) => (
-                <a className="card note rv" style={vars({ "--i": i })} href={n.href} key={i}>
-                  <div className="dt mono">
-                    <span>{n.date}</span>
-                    <span>{n.read}</span>
-                  </div>
-                  <h4>{n.title}</h4>
-                  <p className="ph">{n.summary}</p>
-                  <span className="go mono">Read →</span>
-                </a>
+              {featured.map((p, i) => (
+                <NoteCard post={p} i={i} key={p.slug} headingLevel="h3" />
               ))}
+            </div>
+            <div className="notes-more rv">
+              <a className="btn mono" href="/notes/">
+                All notes →
+              </a>
             </div>
           </section>
 
@@ -379,17 +353,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer>
-        <div className="wrap">
-          <div className="fr mono">
-            <span>© 2026 Nitin Pandey</span>
-            <span>Designed &amp; built in code</span>
-          </div>
-        </div>
-        <div className="word" aria-hidden="true">
-          Nitin Pandey.
-        </div>
-      </footer>
+      <Footer />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
     </>
