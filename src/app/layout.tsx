@@ -4,7 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { site } from "@/content";
 import "./globals.css";
 
-const url = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nitin-pandey.vercel.app";
+const url = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-steel-xi-78.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -20,8 +20,9 @@ export const metadata: Metadata = {
     description: site.description,
     siteName: site.name,
     locale: "en_US",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Nitin Pandey · Product Manager, LLM & agentic AI" }],
   },
-  twitter: { card: "summary_large_image", title: site.title, description: site.description },
+  twitter: { card: "summary_large_image", title: site.title, description: site.description, images: ["/og.png"] },
   robots: { index: true, follow: true },
 };
 

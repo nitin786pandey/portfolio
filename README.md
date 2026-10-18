@@ -2,7 +2,7 @@
 
 Personal portfolio for Nitin Pandey, Product Manager working on LLM and agentic AI products.
 
-Built with Next.js (App Router), TypeScript, Tailwind CSS v4 and the Geist fonts. The site is a static export (`out/`) and is hosted on Vercel.
+Built with Next.js (App Router), TypeScript, Tailwind CSS v4 and the Geist fonts. The site is a static export (`out/`) and is hosted on Vercel at https://portfolio-steel-xi-78.vercel.app (auto-deploys on every push to `main`).
 
 ## Run locally
 
@@ -28,7 +28,7 @@ All copy that still needs filling in lives in [`src/content.ts`](src/content.ts)
 - `src/components/Ambient.tsx`: dot grid, cursor lens, click ripple, scroll reveals (client)
 - `src/components/Principles.tsx`: cycling PM principles panel (client)
 - `src/app/globals.css`: design tokens and styles
-- `src/app/opengraph-image.tsx`: generated social preview image
+- `public/og.png`: social preview image (Open Graph / Twitter)
 
 All motion respects `prefers-reduced-motion`.
 
