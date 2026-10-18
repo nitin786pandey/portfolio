@@ -17,6 +17,7 @@ const PUB = process.env.SUBSTACK_PUB_URL || "https://theproductsensei.substack.c
 const PROFILE = "https://substack.com/@learningnitin";
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const OUT = path.join(ROOT, "src/data/posts.json");
+const CONFIG = path.join(ROOT, "src/data/writing.json");
 const IMG_DIR = path.join(ROOT, "public/writing");
 const UA = { "User-Agent": "Mozilla/5.0 (portfolio build; +https://github.com/nitin786pandey/portfolio)" };
 const WPM = 230;
@@ -152,9 +153,11 @@ async function main() {
     return log("Substack unreachable, keeping committed snapshot:", e.message);
   }
 
+  const hidden = new Set(JSON.parse(await fs.readFile(CONFIG, "utf8")).hidden ?? []);
   const posts = [];
   const skipped = [];
   for (const a of archive) {
+    if (hidden.has(a.slug)) { skipped.push(`${a.slug} (hidden)`); continue; }
     if (a.audience && a.audience !== "everyone") { skipped.push(`${a.slug} (paid)`); continue; }
     if ((a.wordcount ?? 0) < MIN_WORDS) { skipped.push(`${a.slug} (${a.wordcount} words)`); continue; }
     try {

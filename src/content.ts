@@ -1,3 +1,5 @@
+import writingConfig from "@/data/writing.json";
+
 /**
  * All site copy lives here.
  *
@@ -36,11 +38,9 @@ export const stats = [
 
 /**
  * Writing, imported from Substack at build time (scripts/fetch-substack.mjs).
+ * The lists live in src/data/writing.json so the import script can read them too.
  * - featured: slugs shown on the homepage (first 3 are used). Empty = newest 3.
- * - hidden: slugs to leave off the site entirely.
- * DRAFT: Nitin to confirm the featured set before publishing.
+ * - hidden: slugs left off the site entirely (not imported, no pages, no images).
+ * Approved by Nitin on 18 Oct 2026.
  */
-export const writing = {
-  featured: ["ai-agents-memory-loss", "the-hike-and-the-fall", "does-gen-z-really-want-to-bereal"],
-  hidden: [] as string[],
-};
+export const writing: { featured: string[]; hidden: string[] } = writingConfig;

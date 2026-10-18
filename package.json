@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prebuild": "node scripts/fetch-substack.mjs",
+    "prebuild": "node scripts/fetch-substack.mjs && node scripts/prune-hidden.mjs",
     "fetch:substack": "node scripts/fetch-substack.mjs"
   },
   "dependencies": {
