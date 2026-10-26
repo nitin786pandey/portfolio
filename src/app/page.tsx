@@ -119,6 +119,49 @@ export default function Home() {
                 </div>
               </div>
             </article>
+
+            <article className="card chap rev rv">
+              <div className="ci">
+                <div className="when mono">Earlier</div>
+                <h3>Nojoto</h3>
+                <p className="d">
+                  A creator-economy live-streaming app. I conceived and launched Expert Consultations, a pay-per-minute call platform for Tier 2 India. It grew from ₹0 to ₹10 lakh a month in 5 months, and ARPU doubled from ₹142 to ₹286.
+                </p>
+                <div className="chips mono">
+                  <span className="chip">Consumer</span>
+                  <span className="chip">Creator economy</span>
+                </div>
+              </div>
+              <div className="vis" aria-hidden="true">
+                <div className="feed">
+                  <div className="post">
+                    <div className="hd">
+                      <div className="av" />
+                      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>
+                        <div className="bar" style={{ width: "40%" }} />
+                        <div className="bar" style={{ width: "22%", height: 5 }} />
+                      </div>
+                    </div>
+                    <div className="md" />
+                    <div className="ac mono">
+                      <span className="lk">♥ like</span>
+                      <span>comment</span>
+                      <span>share</span>
+                    </div>
+                  </div>
+                  <div className="post" style={{ opacity: 0.55 }}>
+                    <div className="hd">
+                      <div className="av" />
+                      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>
+                        <div className="bar" style={{ width: "52%" }} />
+                        <div className="bar" style={{ width: "30%", height: 5 }} />
+                      </div>
+                    </div>
+                    <div className="bar" style={{ width: "90%" }} />
+                  </div>
+                </div>
+              </div>
+            </article>
           </section>
 
           <section id="playground" aria-labelledby="pg-title">
