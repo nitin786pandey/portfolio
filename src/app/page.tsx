@@ -195,7 +195,7 @@ export default function Home() {
                     </div>
                     <div className="row">
                       <span className="l mono">Outcome</span>
-                      <span>+10 hours a week</span>
+                      <span>+10 hours</span>
                     </div>
                   </div>
                   <a className="more mono" href="https://github.com/nitin786pandey/PM-Chief-of-Staff" target="_blank" rel="noopener noreferrer">
