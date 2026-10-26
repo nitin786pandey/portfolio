@@ -22,16 +22,16 @@ export const site = {
 
 export const principles = [
   "Agents should own outcomes, not just answers.",
-  "Pilot with a few merchants, then roll out to all.",
+  "Pilot with a few merchants, then roll out.",
   "Set the target before the launch.",
   "Every insight should trace back to the real chat.",
-  "Memory is the product.",
+  "Measure conversion, not conversation.",
   "Enable sales, not just ship.",
 ];
 
 export const stats = [
   { v: "4.8 yrs", k: "product experience" },
-  { v: "+23.6%", k: "product-search conversion, Q3" },
+  { v: "+23.6%", k: "product-search conversion, Q3 (with eng)" },
   { v: "2", k: "live side projects" },
 ];
 
