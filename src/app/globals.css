@@ -126,8 +126,8 @@ section{scroll-margin-top:80px}
 /* playground */
 .pg{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .pg .card{display:flex;flex-direction:column}
-.pg .vis{border-left:0;border-bottom:1px solid var(--bd);min-height:330px;padding:28px}
-.pg .ci{padding:34px;justify-content:flex-start}
+.pg .vis{border-left:0;order:2;border-top:1px solid var(--bd);min-height:420px;padding:28px}
+.pg .ci{order:1;flex:1;padding:34px;justify-content:flex-start}
 .pg h3{font-size:28px}
 .pbo{margin-top:22px;border-top:1px solid var(--bd)}
 .row{display:grid;grid-template-columns:90px 1fr;padding:13px 0;border-bottom:1px solid var(--bd);font-size:14px;line-height:1.5;color:#C3C6CC}
