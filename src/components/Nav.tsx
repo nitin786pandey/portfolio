@@ -23,7 +23,6 @@ export default function Nav({ home = true, current }: { home?: boolean; current?
           <a href={`${b}#contact`}>Contact</a>
         </div>
         <div className="ico">
-          {/* [LinkedIn URL: Nitin to provide] */}
           <a href={linkedin} aria-label="LinkedIn" {...ext(linkedin)}>
             <LinkedInIcon />
           </a>

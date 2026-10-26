@@ -15,9 +15,9 @@ export const site = {
     "Nitin Pandey is a Product Manager building LLM and agentic AI products. PM on Manifest AI at Bik.ai; on the side he ships agents he uses every day.",
   github: "https://github.com/nitin786pandey",
   /** PLACEHOLDER: e.g. "mailto:you@example.com". While null, the button shows "[Email] →" and links to "#". */
-  email: null as string | null,
+  email: "mailto:nitin786pandey3@gmail.com" as string | null,
   /** PLACEHOLDER: your LinkedIn profile URL. While null, LinkedIn links point to "#". */
-  linkedin: null as string | null,
+  linkedin: "https://www.linkedin.com/in/pmnitin" as string | null,
 };
 
 /** DRAFT principles: placeholders for Nitin to rewrite in his own words. */

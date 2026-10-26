@@ -119,51 +119,6 @@ export default function Home() {
                 </div>
               </div>
             </article>
-
-            <article className="card chap rev rv">
-              <div className="ci">
-                <div className="when mono">Earlier</div>
-                <h3>Nojoto</h3>
-                <p className="d">
-                  <span className="ph">
-                    [One or two lines on what Nojoto is, what you worked on, and what you learned.]
-                  </span>
-                </p>
-                <div className="chips mono">
-                  <span className="chip">Consumer</span>
-                  <span className="chip">[Area]</span>
-                </div>
-              </div>
-              <div className="vis" aria-hidden="true">
-                <div className="feed">
-                  <div className="post">
-                    <div className="hd">
-                      <div className="av" />
-                      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>
-                        <div className="bar" style={{ width: "40%" }} />
-                        <div className="bar" style={{ width: "22%", height: 5 }} />
-                      </div>
-                    </div>
-                    <div className="md" />
-                    <div className="ac mono">
-                      <span className="lk">♥ like</span>
-                      <span>comment</span>
-                      <span>share</span>
-                    </div>
-                  </div>
-                  <div className="post" style={{ opacity: 0.55 }}>
-                    <div className="hd">
-                      <div className="av" />
-                      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>
-                        <div className="bar" style={{ width: "52%" }} />
-                        <div className="bar" style={{ width: "30%", height: 5 }} />
-                      </div>
-                    </div>
-                    <div className="bar" style={{ width: "90%" }} />
-                  </div>
-                </div>
-              </div>
-            </article>
           </section>
 
           <section id="playground" aria-labelledby="pg-title">
@@ -240,7 +195,7 @@ export default function Home() {
                     </div>
                     <div className="row">
                       <span className="l mono">Outcome</span>
-                      <span className="ph">[Your number, e.g. hours saved per week]</span>
+                      <span>+10 hours a week</span>
                     </div>
                   </div>
                   <a className="more mono" href="https://github.com/nitin786pandey/PM-Chief-of-Staff" target="_blank" rel="noopener noreferrer">
@@ -297,7 +252,7 @@ export default function Home() {
                     </div>
                     <div className="row">
                       <span className="l mono">Outcome</span>
-                      <span className="ph">[Your number, e.g. papers finished or users]</span>
+                      <span>12+ papers finished</span>
                     </div>
                   </div>
                   <a className="more mono" href="https://github.com/nitin786pandey/companion-reader" target="_blank" rel="noopener noreferrer">
