@@ -46,7 +46,7 @@ export default function Home() {
                 <span>Pandey.</span>
               </h1>
               <p className="bio rv" style={vars({ "--i": 2 })}>
-                PM on <b>Manifest AI at Bik.ai</b>, an AI sales assistant for Shopify stores. Previously at{" "}
+                PM on <b>Manifest AI</b>, an AI sales assistant for Shopify stores. Previously at{" "}
                 <b>Nojoto</b>. On the side, I ship agents I use every day.
               </p>
               <div className="btns mono rv" style={vars({ "--i": 3 })}>
@@ -86,9 +86,7 @@ export default function Home() {
                   <span className="dot" aria-hidden="true" />
                   Now
                 </div>
-                <h3>
-                  Manifest AI <em>at Bik.ai</em>
-                </h3>
+                <h3>Manifest AI</h3>
                 <p className="d">
                   An AI agent trained on a store&apos;s catalog that answers pre-sale questions and resolves support in one conversation. I work on product discovery and agent adoption: Voice of Shoppers, the default Product Comparison Concierge agent, image input and product search. The bet is that agents which own outcomes beat a chat widget.
                 </p>

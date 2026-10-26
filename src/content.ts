@@ -12,7 +12,7 @@ export const site = {
   name: "Nitin Pandey",
   title: "Nitin Pandey · Product Manager",
   description:
-    "Nitin Pandey is a Product Manager building LLM and agentic AI products. PM on Manifest AI at Bik.ai; on the side he ships agents he uses every day.",
+    "Nitin Pandey is a Product Manager building LLM and agentic AI products. PM on Manifest AI; on the side he ships agents he uses every day.",
   github: "https://github.com/nitin786pandey",
   /** PLACEHOLDER: e.g. "mailto:you@example.com". While null, the button shows "[Email] →" and links to "#". */
   email: "mailto:nitin786pandey3@gmail.com" as string | null,
