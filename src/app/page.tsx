@@ -58,14 +58,14 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            {/* DRAFT principles: placeholders for Nitin to rewrite in his own words */}
+            
             <Principles items={principles} />
           </section>
 
           <div className="stats rv" role="list" aria-label="At a glance">
             {stats.map((s) => (
               <div className="stat" role="listitem" key={s.k}>
-                <div className={s.placeholder ? "v ph" : "v"}>{s.v}</div>
+                <div className="v">{s.v}</div>
                 <div className="k mono">{s.k}</div>
               </div>
             ))}
@@ -90,8 +90,7 @@ export default function Home() {
                   Manifest AI <em>at Bik.ai</em>
                 </h3>
                 <p className="d">
-                  An AI sales assistant for Shopify stores.{" "}
-                  <span className="ph">[One or two lines on your scope, what you own, and the bet you&apos;re making.]</span>
+                  An AI agent trained on a store&apos;s catalog that answers pre-sale questions and resolves support in one conversation. I work on product discovery and agent adoption: Voice of Shoppers, the default Product Comparison Concierge agent, image input and product search. The bet is that agents which own outcomes beat a chat widget.
                 </p>
                 <div className="chips mono">
                   <span className="chip">Agentic AI</span>

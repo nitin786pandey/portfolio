@@ -20,19 +20,18 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/pmnitin" as string | null,
 };
 
-/** DRAFT principles: placeholders for Nitin to rewrite in his own words. */
 export const principles = [
-  "Evals before demos.",
+  "Agents should own outcomes, not just answers.",
+  "Pilot with a few merchants, then roll out to all.",
+  "Set the target before the launch.",
+  "Every insight should trace back to the real chat.",
   "Memory is the product.",
-  "Ship the boring version first.",
-  "Cut until it hurts.",
-  "Numbers or it didn't happen.",
-  "Users over roadmaps.",
+  "Enable sales, not just ship.",
 ];
 
 export const stats = [
   { v: "4.8 yrs", k: "product experience" },
-  { v: "[metric]", k: "shipped at work", placeholder: true }, // PLACEHOLDER
+  { v: "+23.6%", k: "product-search conversion, Q3" },
   { v: "2", k: "live side projects" },
 ];
 
