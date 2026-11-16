@@ -133,6 +133,10 @@ section{scroll-margin-top:80px}
 .row{display:grid;grid-template-columns:90px 1fr;padding:13px 0;border-bottom:1px solid var(--bd);font-size:14px;line-height:1.5;color:#C3C6CC}
 .row .l{font-size:11px;color:var(--ac);text-transform:uppercase;letter-spacing:.08em;padding-top:3px}
 .more{margin-top:20px;font-size:13px;color:var(--ac)}
+.pg .shot{width:100%;height:auto;display:block;border:1px solid var(--bd);border-radius:10px;position:relative;z-index:1}
+.pg .card.span{grid-column:1 / -1}
+.pg .card.span .ci{max-width:720px}
+.pg .card.span .vis{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:14px}
 .term{border:1px solid var(--bd);border-radius:10px;background:#090A0C;font-size:12px;line-height:1.75;position:relative}
 .tbar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--bd)}
 .tbar i{width:9px;height:9px;border-radius:50%;background:#2B2F37}
@@ -180,6 +184,8 @@ footer{margin-top:96px;border-top:1px solid var(--bd);overflow:hidden}
 .chap.rev .ci{order:0}
 .chap .vis,.chap.rev .vis{border:0;border-top:1px solid var(--bd)}
 .pg,.notes{grid-template-columns:1fr}
+.pg .card.span .vis{grid-template-columns:1fr}
+.pg .card.span .ci{max-width:none}
 .cta{flex-direction:column;align-items:flex-start;padding:40px}
 }
 @media(max-width:640px){

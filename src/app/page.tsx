@@ -300,6 +300,56 @@ export default function Home() {
                   </a>
                 </div>
               </article>
+
+              <article className="card span rv" style={vars({ "--i": 2 })}>
+                <div
+                  className="vis"
+                  role="img"
+                  aria-label="Needs Board landing page, and the Northwind Apparel demo board with a scored need and triage actions"
+                >
+                  <img className="shot" src="/projects/needs-board-board.webp" width={960} height={900} alt="" />
+                  <img className="shot" src="/projects/needs-board-landing.webp" width={960} height={670} alt="" />
+                </div>
+                <div className="ci">
+                  <div className="when mono">
+                    SaaS · <span className="p">Next.js</span>
+                  </div>
+                  <h3>Needs Board</h3>
+                  <p className="d">
+                    Call transcripts and Slack feature requests, scored and de-duplicated into a board you can triage
+                    and send to Jira.
+                  </p>
+                  <div className="chips mono">
+                    {["Fireflies", "Slack", "Jira", "LLM"].map((c) => (
+                      <span className="chip" key={c}>
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="pbo">
+                    <div className="row">
+                      <span className="l mono">Problem</span>
+                      <span>PMs lose customer signal across calls and Slack.</span>
+                    </div>
+                    <div className="row">
+                      <span className="l mono">Bet</span>
+                      <span>A scored inbox you can accept, reject, note, or send to Jira beats rereading the pile.</span>
+                    </div>
+                    <div className="row">
+                      <span className="l mono">Outcome</span>
+                      <span>Shipped end to end with coding agents.</span>
+                    </div>
+                  </div>
+                  <a
+                    className="more mono"
+                    href="https://needs-board-saas.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View live demo →
+                  </a>
+                </div>
+              </article>
             </div>
           </section>
 
