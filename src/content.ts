@@ -32,7 +32,7 @@ export const principles = [
 export const stats = [
   { v: "4.8 yrs", k: "product experience" },
   { v: "+23.6%", k: "product-search conversion, Q3 (with eng)" },
-  { v: "2", k: "live side projects" },
+  { v: "3", k: "live side projects" },
 ];
 
 /**
